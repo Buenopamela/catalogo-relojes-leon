@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo online de Relojes León. Modelos deportivos, clásicos y premium. Consultá disponibilidad por WhatsApp."
+    />
+
+    <title>Catálogo de Relojes Leon</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Catálogo de Relojes Leon" />
+    <meta
+      property="og:description"
+      content="Elegí tu reloj y consultá por WhatsApp. Stock limitado."
+    />
+    <meta
+      property="og:image"
+      content="https://catalogo-relojes-leon.netlify.app/img/preview.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://catalogo-relojes-leon.netlify.app/"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter (WhatsApp fallback) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://catalogo-relojes-leon.netlify.app/img/preview.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-25W5QNCBTX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-25W5QNCBTX");
+    </script>
+  </head>
+
+  <body>
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Showroom Online</h1>
+      <p>Relojes calidad AAA · Stock limitado · Coordinación por WhatsApp</p>
+      <a href="#destacados" class="btn-hero">Ver modelos destacados</a>
+    </section>
+    <!-- Filtro Categorias -->
+    <section class="filtros">
+      <button data-filter="all" class="activo">Todos</button>
+      <button data-filter="deportivo">Deportivos</button>
+      <button data-filter="clasico">Clásicos</button>
+      <button data-filter="retro">Retro</button>
+      <button data-filter="premium">Premium</button>
+    </section>
+    <!-- Filtro Categorias end -->
+
+    <!-- CATÁLOGO -->
+    <main>
+      <!-- ⭐ DESTACADOS -->
+      <section class="destacados" id="destacados">
+        <h2>⭐ Destacados</h2>
+        <div class="grid">
+          <!-- PRODUCTO 1 -->
+          <article class="producto deportivo">
+            <img
+              src="img/reloj-02.jpg"
+              alt="Reloj G-Shock Mud Resist Verde"
+              loading="lazy"
+              width="400"
+              height="500"
+            />
+            <h3>G-Shock Mud Resist</h3>
+            <a
+              class="btn-whatsapp"
+              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20Mud%20Resist.%20%C2%BFSigue%20disponible%3F"
+            >
+              Consultar
+            </a>
+          </article>
+          <!-- PRODUCTO 2 -->
+          <article class="producto premium">
+            <img
+              src="img/reloj-12.jpg"
+              alt="Reloj Patek Philippe"
+              loading="lazy"
+              width="400"
+              height="500"
+            />
+            <h3>Patek Philippe</h3>
+            <a
+              class="btn-whatsapp"
+              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20Patek%20Philippe.%20%C2%BFSigue%20disponible%3F"
+            >
+              Consultar
+            </a>
+          </article>
+        </div>
+      </section>
+      <!-- 🔥 MÁS VENDIDOS -->
+      <section class="mas-vendidos">
+        <h2>🔥 Más vendidos</h2>
+        <div class="grid">
+          <!-- PRODUCTO 3 -->
+          <article class="producto Nuevos">
+            <img
+              src="img/reloj-22.jpg"
+              alt="Reloj G-Shock Arcoiris"
+              loading="lazy"
+              width="400"
+              height="500"
+            />
+            <h3>G-Shock Arcoíris</h3>
+            <a
+              class="btn-whatsapp"
+              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20Arco%C3%ADris.%20%C2%BFSigue%20disponible%3F"
+            >
+              Consultar
+            </a>
+          </article>
+          <!-- PRODUCTO 4 -->
+          <article class="producto deportivo">
+            <img
+              src="img/reloj-03.jpg"
+              alt="Reloj G-Shock MT-G"
+              loading="lazy"
+              width="400"
+              height="500"
+            />
+            <h3>G-Shock MT-G</h3>
+            <a
+              class="btn-whatsapp"
+              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20MT-G.%20%C2%BFSigue%20disponible%3F"
+            >
+              Consultar
+            </a>
+          </article>
+        </div>
+      </section>
+      <!-- TODOS LOS MODELOS -->
+      <section class="todos-modelos">
+        <h2>Todos los modelos</h2>
+
+        <div class="grid visibles">
+          <!-- Acá podés duplicar productos visibles iniciales -->
+        </div>
+
+        <div class="grid ocultos" id="modelosOcultos" style="display: none">
+          <!-- Acá van el resto de productos -->
+        </div>
+
+        <button id="verMasBtn" class="btn-ver-mas">Ver más modelos ↓</button>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="catalog-footer">
+      <hr class="footer-line" />
+
+      <button type="button" class="btn-whatsapp-share" id="shareCatalogo">
+        📲 Compartir catálogo en WhatsApp
+      </button>
+
+      <p class="footer-credit">
+        Catálogo diseñado y desarrollado por <strong>BuenoStudio</strong>
+      </p>
+
+      <hr class="footer-line" />
+    </footer>
+    <script src="filtros.js"></script>
+  </body>
+</html>
