@@ -57,117 +57,39 @@
   </head>
 
   <body>
-    <!-- HERO -->
-    <section class="hero">
-      <h1>Showroom Online</h1>
-      <p>Relojes calidad AAA · Stock limitado · Coordinación por WhatsApp</p>
-      <a href="#destacados" class="btn-hero">Ver modelos destacados</a>
-    </section>
-    <!-- Filtro Categorias -->
-    <section class="filtros">
-      <button data-filter="all" class="activo">Todos</button>
-      <button data-filter="deportivo">Deportivos</button>
-      <button data-filter="clasico">Clásicos</button>
-      <button data-filter="retro">Retro</button>
-      <button data-filter="premium">Premium</button>
-    </section>
-    <!-- Filtro Categorias end -->
+    <main class="catalog">
+      <!-- HERO -->
+      <section class="hero">
+        <h1>Showroom Online</h1>
+        <p>Relojes calidad AAA · Stock limitado · Coordinación por WhatsApp</p>
+        <a href="#mas-vendidos" class="btn-hero">Ver modelos destacados</a>
+      </section>
 
-    <!-- CATÁLOGO -->
-    <main>
-      <!-- ⭐ DESTACADOS -->
-      <section class="destacados" id="destacados">
+      <!-- FILTROS -->
+      <section class="filtros" aria-label="Filtrar por categoría">
+        <button data-filter="all" class="activo">Todos</button>
+        <button data-filter="deportivo">Deportivos</button>
+        <button data-filter="clasico">Clásicos</button>
+        <button data-filter="retro">Retro</button>
+        <button data-filter="premium">Premium</button>
+      </section>
+
+      <!-- DESTACADOS (queda manual por ahora) -->
+      <section class="destacados">
         <h2>⭐ Destacados</h2>
-        <div class="grid">
-          <!-- PRODUCTO 1 -->
-          <article class="producto deportivo">
-            <img
-              src="img/reloj-02.jpg"
-              alt="Reloj G-Shock Mud Resist Verde"
-              loading="lazy"
-              width="400"
-              height="500"
-            />
-            <h3>G-Shock Mud Resist</h3>
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20Mud%20Resist.%20%C2%BFSigue%20disponible%3F"
-            >
-              Consultar
-            </a>
-          </article>
-          <!-- PRODUCTO 2 -->
-          <article class="producto premium">
-            <img
-              src="img/reloj-12.jpg"
-              alt="Reloj Patek Philippe"
-              loading="lazy"
-              width="400"
-              height="500"
-            />
-            <h3>Patek Philippe</h3>
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20Patek%20Philippe.%20%C2%BFSigue%20disponible%3F"
-            >
-              Consultar
-            </a>
-          </article>
+        <div class="destacados-scroll">
+          <!-- Dejamos tus destacados como están -->
         </div>
       </section>
-      <!-- 🔥 MÁS VENDIDOS -->
-      <section class="mas-vendidos">
+
+      <!-- MÁS VENDIDOS -->
+      <section class="mas-vendidos" id="mas-vendidos">
         <h2>🔥 Más vendidos</h2>
-        <div class="grid">
-          <!-- PRODUCTO 3 -->
-          <article class="producto Nuevos">
-            <img
-              src="img/reloj-22.jpg"
-              alt="Reloj G-Shock Arcoiris"
-              loading="lazy"
-              width="400"
-              height="500"
-            />
-            <h3>G-Shock Arcoíris</h3>
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20Arco%C3%ADris.%20%C2%BFSigue%20disponible%3F"
-            >
-              Consultar
-            </a>
-          </article>
-          <!-- PRODUCTO 4 -->
-          <article class="producto deportivo">
-            <img
-              src="img/reloj-03.jpg"
-              alt="Reloj G-Shock MT-G"
-              loading="lazy"
-              width="400"
-              height="500"
-            />
-            <h3>G-Shock MT-G</h3>
-            <a
-              class="btn-whatsapp"
-              href="https://wa.me/12368188312?text=Hola%21%20Me%20interesa%20el%20G-Shock%20MT-G.%20%C2%BFSigue%20disponible%3F"
-            >
-              Consultar
-            </a>
-          </article>
-        </div>
-      </section>
-      <!-- TODOS LOS MODELOS -->
-      <section class="todos-modelos">
-        <h2>Todos los modelos</h2>
+        <div class="grid" id="productosGrid"></div>
 
-        <div class="grid visibles">
-          <!-- Acá podés duplicar productos visibles iniciales -->
-        </div>
-
-        <div class="grid ocultos" id="modelosOcultos" style="display: none">
-          <!-- Acá van el resto de productos -->
-        </div>
-
-        <button id="verMasBtn" class="btn-ver-mas">Ver más modelos ↓</button>
+        <button id="verMasBtn" class="btn-ver-mas" data-state="collapsed">
+          Ver más modelos ↓
+        </button>
       </section>
     </main>
 

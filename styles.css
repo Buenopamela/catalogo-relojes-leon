@@ -12,6 +12,7 @@ body {
   background-color: #f5f5f5;
   color: #222;
   line-height: 1.4;
+  overflow-x: hidden;
 }
 
 button {
@@ -22,35 +23,55 @@ button {
 }
 
 /* ============================
+   MAIN WRAPPER
+============================ */
+main {
+  padding: 20px 10px 60px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* ============================
    HERO
 ============================ */
 .hero {
   text-align: center;
-  padding: 24px 15px 24px;
+  padding: 20px 12px;
   background: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
+  border-radius: 12px;
 }
 
 .hero h1 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .hero p {
-  font-size: 13px;
-  white-space: nowrap;
+  font-size: 11px;
   color: #555;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .btn-hero {
   display: inline-block;
   background: #000;
   color: #fff;
-  padding: 10px 18px;
+  padding: 8px 14px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 12px;
 }
 
 /* ============================
@@ -58,12 +79,9 @@ button {
 ============================ */
 .filtros {
   display: flex;
-  gap: 8px;
-  padding: 14px 16px;
+  gap: 6px;
+  padding: 10px 0;
   overflow-x: auto;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e5e5;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
@@ -73,8 +91,8 @@ button {
 
 .filtros button {
   flex: 0 0 auto;
-  padding: 8px 14px;
-  font-size: 0.8rem;
+  padding: 5px 10px;
+  font-size: 10px;
   border-radius: 20px;
   border: 1px solid #ddd;
   background-color: #fff;
@@ -88,65 +106,84 @@ button {
 }
 
 /* ============================
-   MAIN
+   DESTACADOS
 ============================ */
-main {
-  padding: 32px 16px;
+.destacados-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
-section {
-  margin-bottom: 40px;
+.destacados-scroll::-webkit-scrollbar {
+  display: none;
 }
 
-section h2 {
-  font-size: 18px;
-  margin-bottom: 16px;
+.destacados-scroll .producto {
+  flex: 0 0 70%;
+  scroll-snap-align: start;
 }
 
 /* ============================
-   GRID (MOBILE BASE)
+   GRID – 2 COLUMNAS MOBILE FIJO
 ============================ */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 8px;
 }
 
 /* ============================
-   PRODUCTO
+   PRODUCT CARD
 ============================ */
 .producto {
   background: #ffffff;
-  border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 6px;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
 }
+
 .producto img {
   width: 100%;
-  height: 240px;
+  height: 130px;
   object-fit: contain;
   background: #000;
   border-radius: 8px;
+  margin-bottom: 6px;
 }
 
 .producto h3 {
-  font-size: 13px;
-  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-/* ============================
-   BOTÓN WHATSAPP
-============================ */
+.precio {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.beneficios {
+  list-style: none;
+  font-size: 9px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .btn-whatsapp {
-  display: inline-block;
+  margin-top: 4px;
+  display: block;
   background-color: #25d366;
   color: #ffffff;
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 5px 6px;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
+  text-align: center;
 }
 
 /* ============================
@@ -157,91 +194,49 @@ section h2 {
   display: block;
   background: #000;
   color: #fff;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* ============================
-   STICKY WHATSAPP
+   DESKTOP
 ============================ */
-.whatsapp-sticky {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  background: #25d366;
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  text-decoration: none;
-  z-index: 999;
-}
+@media (min-width: 768px) {
+  main {
+    max-width: 1200px;
+  }
 
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+
+  .producto img {
+    height: 220px;
+  }
+
+  .destacados-scroll .producto {
+    flex: 0 0 30%;
+  }
+}
 /* ============================
-   FOOTER
-============================ */
+FOOTER CATÁLOGO ============================ */
 .catalog-footer {
-  margin: 50px 0 30px;
+  margin: 60px 0 40px;
   text-align: center;
 }
 
 .footer-line {
   width: 60%;
-  max-width: 420px;
-  margin: 14px auto;
+  max-width: 480px;
+  margin: 16px auto;
   border: none;
   height: 1px;
   background-color: #e5e5e5;
 }
 
 .footer-credit {
-  font-size: 13px;
+  font-size: 14px;
   color: #777;
-}
-
-.btn-whatsapp-share {
-  display: inline-block;
-  background-color: transparent;
-  color: #25d366;
-  border: 2px solid #25d366;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-/* ============================
-   DESKTOP BREAKPOINT
-============================ */
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 28px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .producto h3 {
-    font-size: 15px;
-  }
-
-  .btn-whatsapp {
-    font-size: 13px;
-    padding: 8px 14px;
-  }
 }
